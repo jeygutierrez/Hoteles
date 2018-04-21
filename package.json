@@ -15,7 +15,7 @@
     "angular": "^1.6.9",
     "angular-messages": "^1.6.9",
     "angular-scroll": "^1.0.2",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.1.0",
     "checklist-model": "^0.11.0",
     "feather-icons": "^4.7.0",
     "jquery": "^3.3.1",
