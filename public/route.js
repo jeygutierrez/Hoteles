@@ -1,21 +1,10 @@
 (() => {
-  'use strict';
-  angular
+    'use strict'
+    angular
     .module('appRoutes', ['ui.router', 'oc.lazyLoad', 'uiRouterTitle'])
     .config(routing);
-  routing.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-  function routing($stateProvider, $urlRouterProvider, $oclazyLoad) {
+    routing.$inject = ['$stateProvider', '$urlRouterProvider'];
 
-    $stateProvider
-     .state('landingPage', {
-        url: '/',
-        templateUrl: './components/landingPage/landingPage.view.html',
-        data:{
-          pageTitle: 'Hoteleria'
-        }
-      })
-$urlRouterProvider.otherwise('/');
-};
-
+    function routing($stateProvider, $urlRouterProvider, $oclazyLoad) {}
 })();
