@@ -7,7 +7,7 @@ const express = require('express'),
       mongoose = require('mongoose');
 
 let db = mongoose.connection,
-    dburl = 'mongodb://localhost:27017',
+    dburl = 'mongodb://admin:admin@ds153869.mlab.com:53869/hoteleria',
     port = 4000;
 
 let server = app.listen(port,_server());
@@ -34,9 +34,12 @@ app.use( (req, res, next) => {
   next();
 });
 
-const index = require('./index');
+const index = require('./index'),
+      user = require('./components/user/user.route');
 
+app.use('/api', user);
 app.use('/', index);
+
 
 module.exports = app;
 
