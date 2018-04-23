@@ -26,7 +26,7 @@
                 return $ocLazyLoad.load('./components/logIn/logIn.controller.js')
               }]
             },
-            controller: 'logInController',
+            controller: 'loginController',
             controllerAs: 'vm'
           })
 
@@ -42,6 +42,42 @@
               }]
             },
             controller: 'userRegistrationController',
+            controllerAs: 'vm'
+          })
+
+          .state('usersList', {
+            url: '/usersList',
+            templateUrl: './components/users/list/usersList.view.html',
+            data: {
+              pageTitle: 'Lista de Usuarios | Bungalow'
+            },
+            params:{
+              objTempUser:''
+            },
+            resolve: {
+              load: ['$ocLazyLoad', ($ocLazyLoad) => {
+                return $ocLazyLoad.load('./components/users/list/usersList.controller.js')
+              }]
+            },
+            controller: 'usersListController',
+            controllerAs: 'vm'
+          })
+
+          .state('usersEdit', {
+            url: '/usersEdit',
+            templateUrl: './components/users/edit/usersEdit.view.html',
+            data: {
+              pageTitle: 'Editar Usuario | Bungalow'
+            },
+            params:{
+              objTempUser:''
+            },
+            resolve: {
+              load: ['$ocLazyLoad', ($ocLazyLoad) => {
+                return $ocLazyLoad.load('./components/users/edit/usersEdit.controller.js')
+              }]
+            },
+            controller: 'usersEditController',
             controllerAs: 'vm'
           })
 

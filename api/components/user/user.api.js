@@ -19,7 +19,7 @@ module.exports.listUser = (req,res) => {
 };
 
 module.exports.updateUser = (req,res) => {
-  UserModel.findByIdAndUpdate(req.body._id, { $set: req.body}, (err, user) => {
+  UserModel.update({id: req.body.id} , req.body, (err, user) => {
     if (err){
       res.json({success:false,msg:'No se ha actualizado.' + handleError(err)});
 
@@ -28,3 +28,4 @@ module.exports.updateUser = (req,res) => {
     }
   });
 };
+

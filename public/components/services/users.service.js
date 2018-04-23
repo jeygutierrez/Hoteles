@@ -10,7 +10,8 @@
   function userService($http, $log, dataStorageFactory){
     const publicUsersAPI = {
       setUser : _setUser,
-      getUsers : _getUsers
+      getUsers : _getUsers,
+      updateUser : _updateUser
     }
     return publicUsersAPI;
 
@@ -50,8 +51,14 @@
           userList.push(newClient);
         }
       });
-
       return userList;
+    }
+
+
+    function _updateUser(userEdited){
+      let success = false;
+      success = dataStorageFactory.updateUser(userEdited);
+      return success;
     }
   }
 })();
