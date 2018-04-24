@@ -51,7 +51,7 @@
           userData;
 
       for (let i = 0; i < userList.length; i++) {
-          if (userList[i].getcedula() == pid) {
+          if (userList[i].getId() == pid) {
               userData = userList[i];
           }
       };

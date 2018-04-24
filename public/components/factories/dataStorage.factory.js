@@ -114,7 +114,7 @@
 
   function _closeSession(){
     let response = true;
-    sessionStorage = removeItem('session');
+    sessionStorage.removeItem('session');
     return response;
   }
 

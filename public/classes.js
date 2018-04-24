@@ -11,6 +11,9 @@ class User{
   }
 
   // funciones para obtener datos
+  getFirstName(){
+    return this.firstName;
+  }
   getEmail(){
     return this.email;
   }
