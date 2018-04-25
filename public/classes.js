@@ -72,9 +72,10 @@ class Admin extends User{
 }
 
 class Hotel{
-  constructor(pIdHotel, pHotelName, pLatitude, pLongitude, pProvincia, pCanton, pDistrito, pAddress, pPhone, pCustServEmail, pReservEmail, pReservPhone){
-    this._id = 0;
+  constructor(pId, pHotelName, pPhoto, pLatitude, pLongitude, pProvincia, pCanton, pDistrito, pAddress, pPhone, pCustServEmail, pReservEmail, pReservPhone){
+    this._id = pId;
     this.hotelName = pHotelName;
+    this.photo = pPhoto;
     this.latitude = pLatitude;
     this.longitude = pLongitude;
     this.provincia = pProvincia;

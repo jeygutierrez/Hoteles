@@ -4,13 +4,15 @@
     .module('Hoteleria')
     .controller('hotelRegistrationController', hotelRegistrationController);
 
-  hotelRegistrationController.$inject = ['$http', 'imageUploadService', 'NgMap', 'Upload', 'hotelService'];
+  hotelRegistrationController.$inject = ['$http', 'imageUpload', 'NgMap', 'Upload', 'hotelService'];
 
-  function hotelRegistrationController($http, imageUploadService, NgMap, Upload, hotelService) {
+  function hotelRegistrationController($http, imageUpload, NgMap, Upload, hotelService) {
       const vm = this;
 
       vm.current = '';
 
+
+    // carga de datos para las provincias, cantones y distritos
       vm.provincias = $http({
           method: 'GET',
           url: './sources/data/provincias.json'
@@ -20,7 +22,7 @@
           console.log("Ocurrió un error " + error.data);
       });
 
-      vm.rellenarCantones = (pidProvincia) => {
+      vm.loadCantones = (pidProvincia) => {
           vm.cantones = $http({
               method: 'GET',
               url: './sources/data/cantones.json'
@@ -37,7 +39,7 @@
           });
       }
 
-      vm.rellenarDistrito = (pidCanton) => {
+      vm.loadDistritos = (pidCanton) => {
           vm.distritos = $http({
               method: 'GET',
               url: './sources/data/distritos.json'
@@ -69,7 +71,7 @@
 
       vm.newHotel = {};
 
-      vm.cloudObj = imageUploadService.getConfiguration();
+      vm.cloudObj = imageUpload.getConfiguration();
 
       vm.preRegisterHotel = (pnewHotel) => {
           vm.cloudObj.data.file = pnewHotel.photo[0];
@@ -83,6 +85,7 @@
           pnewHotel.latitude = vm.current[0];
           pnewHotel.longitude = vm.current[1];
           pnewHotel.photo = urlImage;
+          console.log(pnewHotel);
 
           let newHotel = Object.assign(new Hotel(), pnewHotel);
 
