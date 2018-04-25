@@ -1,0 +1,43 @@
+#landingPage{
+  .hero{
+    background-image: url("img/poolhero.jpg");
+    background-size: cover;
+    min-height: 100vh;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    margin: 0;
+    color: #fff;
+    h1{
+      font-size: 4.5em;
+      line-height: 1;
+    }
+  }
+
+  #aboutBungalow,
+  #services {
+    margin-top: 100px;
+  }
+
+  @media only screen and (max-width: 600px) {
+    #aboutUs{
+      margin: 0;
+      padding: 30px;
+    }
+    #heroContent{
+      text-align: center;
+      font-size: 0.8em;
+    }
+    .btnAction{
+      font-size: 1em;
+      width: 150px;
+    }
+    h1{
+      text-align: center;
+      font-size: 1.2em;
+    }
+    p{
+      font-size: 0.8em;
+    }
+  }
+}

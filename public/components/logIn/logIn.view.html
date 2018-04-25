@@ -1,24 +1,38 @@
-<h1>Inicio de Sesion</h1>
 <main id="logIn">
   <section class="container-fluid">
     <div class="row">
-      <div class="col-md-4 py-5 px-5 panelIzquierdo">
-        <a href="#!/">
+      <div class="col-md-5" id="infoPanel">
+        <a href="">
           <img src="../../../sources/img/chevron-left.svg" height="30px" width="30px" alt="">Regresar a la pagina principal</a>
+        <!-- <button class="link"> Regresar a la página principal</button> -->
       </div>
-      <div class="col-md-8 py-5 px-5 contenido">
-        <h2>Inicio de Sesión</h2>
-        <form ng-submit="vm.login(vm.newSession)" class="col-md-8">
-          <div class="form-group">
-            <label for="inputEmail">Cuenta de Correo</label>
-            <input type="text" class="form-control" id="inputEmail" ng-model="vm.newSession.email" required>
-          </div>
-          <div class="form-group">
-            <label for="inputContrasenna">Contraseña</label>
-            <input type="password" class="form-control" id="inputContrasenna" ng-model="vm.newSession.password" required>
-          </div>
-          <button type="submit" class="btn btnAccion">Iniciar Sesion</button>
-        </form>
+      <div class="col-md-7">
+        <div class="justify-content-center align-items-center">
+          <a href="#">
+            <img src="../../sources/img/bungalowlogo.svg" alt="" width="150" height="50">
+          </a>
+          <h2>Iniciar Sesión</h2>
+          <form ng-submit="vm.login(vm.newSession)" class=" w-75">
+            <div class="form-group">
+              <label for="inputEmail">Cuenta de Correo</label>
+              <input type="text" class="form-control" id="inputEmail" ng-model="vm.newSession.email" required>
+            </div>
+            <div class="form-group">
+              <label for="inputContrasenna">Contraseña</label>
+
+              <div class="input-group mb-3">
+                <input type="{{vm.type}}" class="form-control" id="inputContrasenna" ng-model="vm.newSession.password" required>
+                <div class="input-group-prepend">
+                  <div class="input-group-text">
+                    <input type="checkbox" ng-model="vm.input" ng-change="vm.changeType(vm.input)">
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+            <button type="submit" class="btn btnAccion">Iniciar Sesion</button>
+          </form>
+        </div>
       </div>
     </div>
   </section>

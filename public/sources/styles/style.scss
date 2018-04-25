@@ -10,5 +10,9 @@
 // Estilos de la aplicación
 // -----------------------------------------------------------------------------
 
+@import 'general.style';
+@import 'components/header.style';
+@import 'components/landingPage.style';
+@import 'components/login.style';
 @import 'components/userRegistration.style';
 @import 'components/main.style';
