@@ -13,8 +13,16 @@
         templateUrl: './components/landingPage/landingPage.view.html',
         data: {
           pageTitle: 'Hoteles'
-        }
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/landingPage/landingPage.controller.js')
+          }]
+        },
+        controller: 'landingPageController',
+        controllerAs: 'vm'
       })
+      
       .state('logIn', {
         url: '/logIn',
         templateUrl: './components/logIn/logIn.view.html',

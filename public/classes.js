@@ -122,6 +122,9 @@ class Hotel{
   getReservPhone(){
     return this.reservPhone;
   }
+  getFotoHotel(){
+    return this.photo;
+  }
 
 // Actualizar
   setHotelName(pNewHotelName){

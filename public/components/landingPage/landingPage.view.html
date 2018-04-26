@@ -42,6 +42,28 @@
       </div>
     </div>
   </section>
+
+  <section class="container" id="hotels">
+    <h1>Nuestros hoteles</h1>
+    <div class="row">
+      <!-- Cada hotel de la BD -->
+      <div class="card-group col-md-4" ng-repeat="hotel in vm.allHotels">
+        <div class="card">
+          <img class="card-img-top" src="{{hotel.getFotoHotel()}}" alt="Card image cap" class="img-fluid">
+          <div class="card-body">
+            <h5 class="card-title">{{hotel.hotelName}}</h5>
+            <p>{{hotel.canton}}, {{hotel.provincia}}</p>
+            <p>Dirección: {{hotel.address}}</p>
+            <a href="#" class="btn btnAction">Ver Detalles</a>
+            <a href="#" class="btn btnAction" ng-show="vm.userRole == 1">Editar Hotel</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
 </main>
 
 <footer>
