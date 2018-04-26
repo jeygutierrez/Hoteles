@@ -1,18 +1,18 @@
 <main id="logIn">
   <section class="container-fluid">
     <div class="row d-flex align-items-center">
-      <div class="col-md-5" id="infoPanel">
-        <a href="">
-          <img src="../../../sources/img/chevron-left.svg" height="30px" width="30px" alt="">Regresar a la pagina principal</a>
-        <!-- <button class="link"> Regresar a la página principal</button> -->
+      <div class="col-md-5 col-xs-12 d-flex align-items-center" id="infoPanel">
+        <div>
+          <a href="" ui-sref="landingPage"> <img src="../../sources/img/chevron-left.svg" height="30px" width="30px" alt="">Regresar a la pagina principal</a>
+          <h1>Empezá la aventura con Bungalow! </h1>
+          <a href="" ui-sref="userRegistration" class="btn btn-lg btnAction my-2 my-sm-0">Registrarse</a>
+        </div>
       </div>
-      <div class="col-md-7">
+      <div class="col-md-7 col-xs-12 logInForm">
         <div class="justify-content-center">
-          <a href="#">
-            <img src="../../sources/img/bungalowlogo.svg" alt="" width="300" height="120">
-          </a>
+          <img src="../../sources/img/bungalowlogo.svg" alt="" class="mb-3" width="200px" height="80px">
           <h2>Iniciar Sesión</h2>
-          <form ng-submit="vm.login(vm.newSession)" class=" w-75">
+          <form ng-submit="vm.login(vm.newSession)" class=""">
             <div class="form-group">
               <label for="inputEmail">Cuenta de Correo</label>
               <input type="text" class="form-control" id="inputEmail" ng-model="vm.newSession.email" required>
