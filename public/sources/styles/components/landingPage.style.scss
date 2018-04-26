@@ -15,15 +15,17 @@
   }
 
   #aboutBungalow,
-  #services {
-    margin-top: 100px;
+  #services,#hotels {
+    margin: 100px;
   }
 
   @media only screen and (max-width: 600px) {
-    #aboutUs{
-      margin: 0;
-      padding: 30px;
-    }
+  
+    #hero, #aboutBungalow,
+  #services,#hotels {
+    margin: 0;
+    margin-top: 10px;
+  }
     #heroContent{
       text-align: center;
       font-size: 0.8em;
