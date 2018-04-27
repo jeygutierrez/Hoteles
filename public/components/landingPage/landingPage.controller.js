@@ -10,6 +10,13 @@
     
     vm.allHotels = hotelService.getHotel();
 
+    let direccion = [];
+    for(i=0;i<vm.allHotels.length;i++){
+      let provincia = JSON.parse(vm.allHotels[i].provincia);
+      console.log(provincia.name);
+      direccion.push(provincia);
+    }
+
     console.log(vm.allHotels);
 
     // vm.type = "password";
