@@ -43,7 +43,7 @@
           userList = [];
 
       userData.forEach(obj =>{
-        if(obj.userRole == 1){
+        if(obj.userRole == "1"){
           let newAdmin = Object.assign(new Admin(), obj);
           userList.push(newAdmin)
         }else{

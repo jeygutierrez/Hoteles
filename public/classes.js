@@ -11,6 +11,10 @@ class User{
   }
 
   // funciones para obtener datos
+  getUserRole(){
+    return this.userRole;
+  }
+  
   getFirstName(){
     return this.firstName;
   }

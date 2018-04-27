@@ -10,6 +10,7 @@
     let vm = this;
 
     vm.authUser = loginService.getAuthUser();
+    vm.userRole = vm.authUser.getUserRole();
 
     if(!vm.authUser){
       $state.go('logIn');
