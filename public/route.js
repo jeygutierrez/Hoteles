@@ -38,7 +38,22 @@
         controllerAs: 'vm'
       })
 
-      .state('userRegistration', {
+      .state('main', {
+        url: '/main',
+        templateUrl: './components/main/main.view.html',
+        data: {
+          pageTitle: 'Main | Bungalow'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/main/main.controller.js')
+          }]
+        },
+        controller: 'mainController',
+        controllerAs: 'vm'
+      })
+
+      .state('main.userRegistration', {
         url: '/userRegistration',
         templateUrl: './components/users/register/userRegistration.view.html',
         data: {
@@ -53,7 +68,7 @@
         controllerAs: 'vm'
       })
 
-      .state('usersList', {
+      .state('main.usersList', {
         url: '/usersList',
         templateUrl: './components/users/list/usersList.view.html',
         data: {
@@ -71,7 +86,7 @@
         controllerAs: 'vm'
       })
 
-      .state('usersEdit', {
+      .state('main.usersEdit', {
         url: '/usersEdit',
         templateUrl: './components/users/edit/usersEdit.view.html',
         data: {
@@ -89,7 +104,7 @@
         controllerAs: 'vm'
       })
 
-      .state('hotelRegistration', {
+      .state('main.hotelRegistration', {
         url: '/hotelRegistration',
         templateUrl: './components/hotels/register/hotelRegistration.view.html',
         data: {
@@ -107,7 +122,7 @@
         controllerAs: 'vm'
       })
 
-      .state('hotelsList', {
+      .state('main.hotelsList', {
         url: '/hotelsList',
         templateUrl: './components/hotels/list/hotelsList.view.html',
         data: {
@@ -125,7 +140,7 @@
         controllerAs: 'vm'
       })
 
-      .state('hotelsEdit', {
+      .state('main.hotelsEdit', {
         url: '/hotelsEdit',
         templateUrl: './components/hotels/edit/hotelsEdit.view.html',
         data: {
@@ -143,20 +158,7 @@
         controllerAs: 'vm'
       })
 
-      .state('main', {
-        url: '/main',
-        templateUrl: './components/main/main.view.html',
-        data: {
-          pageTitle: 'Main | Bungalow'
-        },
-        resolve: {
-          load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/main/main.controller.js')
-          }]
-        },
-        controller: 'mainController',
-        controllerAs: 'vm'
-      })
+      
 
 
     $urlRouterProvider.otherwise('/');

@@ -99,13 +99,13 @@ class Hotel{
     return `${this.latitude}, ${this.longitude}`;
   }
   getProvincia(){
-    return this.provincia;
+    return JSON.parse(this.provincia);
   }
   getCanton(){
-    return this.canton;
+    return JSON.parse(this.canton);
   }
   getDistrito(){
-    return this.distrito;
+    return JSON.parse(this.distrito);
   }
   getAddress(){
     return this.address;
