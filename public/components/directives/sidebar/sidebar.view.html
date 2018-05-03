@@ -1,12 +1,9 @@
 <aside class="bg-dark">
-
-
-
   <ul class="nav flex-column">
-    <li class="nav-item" ng-show="vm.userRole == 1">
+    <li class="nav-item" ng-hide="vm.userRole == 2">
       <a class="nav-link text-white py-5" ui-sref="main.hotelRegistration" href="">
         <div class="d-inline">
-          <i class="fas fa-danger"></i>
+          <i class="fas fa-building"></i>
         </div>
         <p class="d-inline">Registrar Hoteles</p>
       </a>
@@ -17,6 +14,24 @@
           <i class="fas fa-building"></i>
         </div>
         <p class="d-inline">Lista de hoteles</p>
+      </a>
+    </li>
+
+    <li class="nav-item" ng-hide="vm.userRole == 2">
+      <a class="nav-link text-white py-5" ui-sref="main.userRegistration" href="">
+        <div class="d-inline">
+          <i class="fas fa-building"></i>
+        </div>
+        <p class="d-inline">Registrar Usuarios</p>
+      </a>
+    </li>
+
+    <li class="nav-item" ng-hide="vm.userRole == 2">
+      <a class="nav-link text-white py-5" ui-sref="main.usersList" href="">
+        <div class="d-inline">
+          <i class="fas fa-building"></i>
+        </div>
+        <p class="d-inline">Listar Usuarios</p>
       </a>
     </li>
 

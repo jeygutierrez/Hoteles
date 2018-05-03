@@ -1,9 +1,11 @@
 <div class="container" id="hotels">
     <h1>Nuestros hoteles</h1>
-    <h4>Buscar hoteles</h4>
-    <input type="text">
+    <div class="form-group">
+      <label for="inputBuscar">Buscar hoteles</label>
+      <input type="text" class="form-control" id="inputBuscar" ng-model="searchHotel">
+    </div>
     <div class="row">
-      <div class="col-12 col-lg-3 p-2 my-2 d-flex justify-content-between" ng-repeat="hotel in vm.allHotels">
+      <div class="col-12 col-lg-3 p-2 my-2 d-flex justify-content-between" ng-repeat="hotel in vm.allHotels | filter:searchHotel">
         <div class="card">
           <img id="img" class="card-img-top p-1 " src="{{hotel.getFotoHotel()}}" alt="Card image cap">
           <div class="card-block p-1">

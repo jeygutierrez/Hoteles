@@ -53,7 +53,7 @@
         controllerAs: 'vm'
       })
 
-      .state('main.userRegistration', {
+      .state('userRegistration', {
         url: '/userRegistration',
         templateUrl: './components/users/register/userRegistration.view.html',
         data: {
@@ -68,9 +68,24 @@
         controllerAs: 'vm'
       })
 
+      .state('main.userRegistration', {
+        url: '/userRegistration',
+        templateUrl: './components/main/users/register/userRegistration.view.html',
+        data: {
+          pageTitle: 'Registro de Usuarios | Bungalow'
+        },
+        resolve: {
+          load: ['$ocLazyLoad', ($ocLazyLoad) => {
+            return $ocLazyLoad.load('./components/main/users/register/userRegistration.controller.js')
+          }]
+        },
+        controller: 'userRegistrationController',
+        controllerAs: 'vm'
+      })
+
       .state('main.usersList', {
         url: '/usersList',
-        templateUrl: './components/users/list/usersList.view.html',
+        templateUrl: './components/main/users/list/usersList.view.html',
         data: {
           pageTitle: 'Lista de Usuarios | Bungalow'
         },
@@ -79,7 +94,7 @@
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/users/list/usersList.controller.js')
+            return $ocLazyLoad.load('./components/main/users/list/usersList.controller.js')
           }]
         },
         controller: 'usersListController',
@@ -106,7 +121,7 @@
 
       .state('main.hotelRegistration', {
         url: '/hotelRegistration',
-        templateUrl: './components/hotels/register/hotelRegistration.view.html',
+        templateUrl: './components/main/hotels/register/hotelRegistration.view.html',
         data: {
           pageTitle: 'Registrar Hotel | Bungalow'
         },
@@ -115,7 +130,7 @@
         },
         resolve: {
           load: ['$ocLazyLoad', ($ocLazyLoad) => {
-            return $ocLazyLoad.load('./components/hotels/register/hotelRegistration.controller.js')
+            return $ocLazyLoad.load('./components/main/hotels/register/hotelRegistration.controller.js')
           }]
         },
         controller: 'hotelRegistrationController',
